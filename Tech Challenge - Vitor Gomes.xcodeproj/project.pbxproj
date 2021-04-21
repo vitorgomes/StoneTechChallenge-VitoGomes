@@ -101,8 +101,8 @@
 			children = (
 				E7F3FA7E262F247600F6E557 /* AppDelegate.swift */,
 				E7F3FA80262F247600F6E557 /* SceneDelegate.swift */,
-				E7F3FA82262F247600F6E557 /* ViewController.swift */,
-				E7F3FA84262F247600F6E557 /* Main.storyboard */,
+				E7F3FAB5262F9FCE00F6E557 /* View */,
+				E7F3FAB6262F9FE500F6E557 /* Controller */,
 				E7F3FA87262F247B00F6E557 /* Assets.xcassets */,
 				E7F3FA89262F247B00F6E557 /* LaunchScreen.storyboard */,
 				E7F3FA8C262F247B00F6E557 /* Info.plist */,
@@ -126,6 +126,22 @@
 				E7F3FAA2262F247C00F6E557 /* Info.plist */,
 			);
 			path = "Tech Challenge - Vitor GomesUITests";
+			sourceTree = "<group>";
+		};
+		E7F3FAB5262F9FCE00F6E557 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7F3FA84262F247600F6E557 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7F3FAB6262F9FE500F6E557 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7F3FA82262F247600F6E557 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
