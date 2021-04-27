@@ -1,7 +1,7 @@
 //___FILEHEADER___
 
 import XCTest
-@testable import ___VARIABLE_productName:identifier___
+@testable import Tech_Challenge___Vitor_Gomes
 
 class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
 

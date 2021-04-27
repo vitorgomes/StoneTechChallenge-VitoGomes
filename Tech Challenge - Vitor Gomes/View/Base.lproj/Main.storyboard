@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,34 +9,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tech_Challenge___Vitor_Gomes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Tech_Challenge___Vitor_Gomes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-87-25x" userLabel="MainScreennNavigationBar">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wk1-87-25x" userLabel="MainScreenNavigationBar">
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="i4R-wv-KkD"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="CHUCK NORRIS FACTS" id="DLX-0f-jbj">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="O4X-FM-shE"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="O4X-FM-shE">
+                                            <connections>
+                                                <action selector="search:" destination="BYZ-38-t0r" id="P9c-Zs-Jq9"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <searchBar hidden="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="h4A-7B-D90">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="tT0-69-jpZ"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ktA-Fq-a1L" userLabel="FactsCollectionView">
-                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="144" width="390" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fKG-VS-Uyd">
                                     <size key="itemSize" width="324" height="128"/>
@@ -45,15 +49,15 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Mq5-I1-bO9" userLabel="FactsCollectionViewCell">
-                                        <rect key="frame" x="45" y="0.0" width="324" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FactsCollectionViewCell" id="Mq5-I1-bO9" userLabel="FactsCollectionViewCell" customClass="FactsCollectionViewCell" customModule="Tech_Challenge___Vitor_Gomes" customModuleProvider="target">
+                                        <rect key="frame" x="33" y="0.0" width="324" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="a3m-Ja-2hN">
                                             <rect key="frame" x="0.0" y="0.0" width="324" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eh4-p5-OBg">
-                                                    <rect key="frame" x="10" y="10" width="304" height="76"/>
+                                                    <rect key="frame" x="10" y="10" width="304" height="75.666666666666671"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
@@ -61,10 +65,10 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="174" translatesAutoresizingMaskIntoConstraints="NO" id="sQ1-jv-kCR" userLabel="TextFieldAndButtonStackView">
-                                                    <rect key="frame" x="10" y="96" width="304" height="22"/>
+                                                    <rect key="frame" x="10" y="95.666666666666671" width="304" height="22.333333333333329"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="xx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDO-uq-MKr" userLabel="CategoryTextField">
-                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="22.333333333333332"/>
                                                             <color key="backgroundColor" red="0.29123620320276844" green="0.59218721025697696" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="57" id="N6X-pN-K54"/>
@@ -74,11 +78,14 @@
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POc-Wp-bu6" userLabel="ShareButton">
-                                                            <rect key="frame" x="264" y="0.0" width="40" height="22"/>
+                                                            <rect key="frame" x="264" y="0.0" width="40" height="22.333333333333332"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="BMP-P4-7uk"/>
                                                             </constraints>
                                                             <state key="normal" title="Button" image="square.and.arrow.up" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="btShare:" destination="Mq5-I1-bO9" eventType="touchUpInside" id="0Uq-Hd-GdV"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -104,6 +111,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="324" height="128"/>
+                                        <connections>
+                                            <outlet property="tfCategories" destination="SDO-uq-MKr" id="tCy-dN-0sW"/>
+                                            <outlet property="tvFactText" destination="Eh4-p5-OBg" id="uUD-ml-UIC"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -125,21 +136,26 @@
                             <constraint firstItem="ktA-Fq-a1L" firstAttribute="top" secondItem="h4A-7B-D90" secondAttribute="bottom" id="wzd-yE-faY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cvFacts" destination="ktA-Fq-a1L" id="Zht-er-nxW"/>
+                        <outlet property="nbMainScreen" destination="Wk1-87-25x" id="ll3-2v-Dvd"/>
+                        <outlet property="sbSearchFacts" destination="h4A-7B-D90" id="wge-5C-ytJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Fact View Controller-->
         <scene sceneID="Vej-qA-LqX">
             <objects>
-                <viewController id="dQJ-Kl-imp" sceneMemberID="viewController">
+                <viewController id="dQJ-Kl-imp" customClass="FactViewController" customModule="Tech_Challenge___Vitor_Gomes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I3K-1y-wg3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSf-Pk-qua">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1QB-cK-emh"/>
                                 </constraints>
@@ -151,7 +167,7 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dCZ-kI-mIw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>

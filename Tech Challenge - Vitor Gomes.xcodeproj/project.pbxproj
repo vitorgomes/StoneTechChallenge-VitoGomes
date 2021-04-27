@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E78F59E0263091A400068AF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59DF263091A400068AF7 /* MainViewController.swift */; };
+		E78F59E5263091BB00068AF7 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59E4263091BB00068AF7 /* FactViewController.swift */; };
+		E78F59ED2630963600068AF7 /* FactsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59EC2630963600068AF7 /* FactsCollectionViewController.swift */; };
+		E78F59F226309AE800068AF7 /* FactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */; };
+		E78F5A002630B4BF00068AF7 /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59FF2630B4BF00068AF7 /* FactsData.swift */; };
+		E7DDBEF826377A60009ECB00 /* FactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDBEF726377A60009ECB00 /* FactsManager.swift */; };
 		E7F3FA7F262F247600F6E557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3FA7E262F247600F6E557 /* AppDelegate.swift */; };
 		E7F3FA81262F247600F6E557 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3FA80262F247600F6E557 /* SceneDelegate.swift */; };
-		E7F3FA83262F247600F6E557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3FA82262F247600F6E557 /* ViewController.swift */; };
 		E7F3FA86262F247600F6E557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F3FA84262F247600F6E557 /* Main.storyboard */; };
 		E7F3FA88262F247B00F6E557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F3FA87262F247B00F6E557 /* Assets.xcassets */; };
 		E7F3FA8B262F247B00F6E557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F3FA89262F247B00F6E557 /* LaunchScreen.storyboard */; };
@@ -35,10 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E78F59DF263091A400068AF7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E78F59E4263091BB00068AF7 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
+		E78F59EC2630963600068AF7 /* FactsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewController.swift; sourceTree = "<group>"; };
+		E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E78F59FF2630B4BF00068AF7 /* FactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsData.swift; sourceTree = "<group>"; };
+		E7DDBEF726377A60009ECB00 /* FactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsManager.swift; sourceTree = "<group>"; };
 		E7F3FA7B262F247600F6E557 /* Tech Challenge - Vitor Gomes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tech Challenge - Vitor Gomes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F3FA7E262F247600F6E557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F3FA80262F247600F6E557 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E7F3FA82262F247600F6E557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7F3FA85262F247600F6E557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7F3FA87262F247B00F6E557 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7F3FA8A262F247B00F6E557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E78F59FB2630A80500068AF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E78F59FF2630B4BF00068AF7 /* FactsData.swift */,
+				E7DDBEF726377A60009ECB00 /* FactsManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E7F3FA72262F247600F6E557 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +120,7 @@
 			children = (
 				E7F3FA7E262F247600F6E557 /* AppDelegate.swift */,
 				E7F3FA80262F247600F6E557 /* SceneDelegate.swift */,
+				E78F59FB2630A80500068AF7 /* Model */,
 				E7F3FAB5262F9FCE00F6E557 /* View */,
 				E7F3FAB6262F9FE500F6E557 /* Controller */,
 				E7F3FA87262F247B00F6E557 /* Assets.xcassets */,
@@ -139,7 +159,10 @@
 		E7F3FAB6262F9FE500F6E557 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E7F3FA82262F247600F6E557 /* ViewController.swift */,
+				E78F59DF263091A400068AF7 /* MainViewController.swift */,
+				E78F59E4263091BB00068AF7 /* FactViewController.swift */,
+				E78F59EC2630963600068AF7 /* FactsCollectionViewController.swift */,
+				E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,9 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F3FA83262F247600F6E557 /* ViewController.swift in Sources */,
+				E78F5A002630B4BF00068AF7 /* FactsData.swift in Sources */,
+				E7DDBEF826377A60009ECB00 /* FactsManager.swift in Sources */,
+				E78F59F226309AE800068AF7 /* FactsCollectionViewCell.swift in Sources */,
+				E78F59E5263091BB00068AF7 /* FactViewController.swift in Sources */,
+				E78F59ED2630963600068AF7 /* FactsCollectionViewController.swift in Sources */,
 				E7F3FA7F262F247600F6E557 /* AppDelegate.swift in Sources */,
 				E7F3FA81262F247600F6E557 /* SceneDelegate.swift in Sources */,
+				E78F59E0263091A400068AF7 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
