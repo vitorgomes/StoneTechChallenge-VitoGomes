@@ -7,33 +7,64 @@
 
 import Foundation
 
-struct FactsManager {
+//List of possible errors for the escaping closure onError
+enum FactError {
     
-    func factsRequest(_ fact: String?) {
+    case url
+    case taskError(error: Error)
+    case noResponse
+    case noData
+    case responseStatusCode(code: Int)
+    case invalidJSON
+}
+
+class FactsManager {
+    
+    func factsRequest(_ fact: String?, onComplete: @escaping (FactsData) -> Void, onError: @escaping (FactError) -> Void) {
         
         if let unwrappedFact = fact {
             
             let urlString = "https://api.chucknorris.io/jokes/search?query=\(unwrappedFact)"
-            let url = URL(string: urlString)!
+            guard let url = URL(string: urlString) else {
+                
+                onError(.url)
+                return
+            }
             
             let session = URLSession.shared
-            
-            let task = session.dataTask(with: url) { (data, response, error) in
+            let task = session.dataTask(with: url) { ( data, response, error) in
                 
                 if error == nil {
                     
-                    let decoder = JSONDecoder()
-                    
-                    if let safeData = data {
+                    guard let response = response as? HTTPURLResponse else {
                         
-                        do {
-                            
-                            let results = try decoder.decode(FactsData.self, from: safeData)
-                        } catch {
-                            
-                            print(error)
-                        }
+                        onError(.noResponse)
+                        return
                     }
+                    if response.statusCode == 200 {
+                        
+                        let decoder = JSONDecoder()
+                        
+                        if let safeData = data {
+                            
+                            do {
+                                
+                                let results = try decoder.decode(FactsData.self, from: safeData)
+                                
+                                onComplete(results)
+                            } catch {
+                                
+                                print(error.localizedDescription)
+                                onError(.invalidJSON)
+                            }
+                        }
+                    } else {
+                        
+                        onError(.responseStatusCode(code: response.statusCode))
+                    }
+                } else {
+                    
+                    onError(.taskError(error: error!))
                 }
             
             }

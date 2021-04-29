@@ -11,7 +11,7 @@ import Foundation
 struct FactsData: Codable {
     
     var total: Int = 0
-    var result:[Result]
+    var result: [Result]
     
 }
 
