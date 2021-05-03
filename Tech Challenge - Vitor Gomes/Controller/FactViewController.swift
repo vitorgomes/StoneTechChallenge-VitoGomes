@@ -9,13 +9,24 @@ import UIKit
 
 class FactViewController: UIViewController {
 
+    var receivedValue: String = ""
+    
+    @IBOutlet weak var lbFactValue: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        print(receivedValue)
+        lbFactValue.text = receivedValue
     }
     
-
+    @IBAction func back(_ sender: UIBarButtonItem) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func share(_ sender: UIBarButtonItem) {
+    }
     /*
     // MARK: - Navigation
 

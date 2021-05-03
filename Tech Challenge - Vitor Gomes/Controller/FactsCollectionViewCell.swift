@@ -8,21 +8,47 @@
 import UIKit
 
 class FactsCollectionViewCell: UICollectionViewCell {
+
+//    var heightSize: CGFloat?
     
-    @IBOutlet weak var tvFactText: UITextView!
-    @IBOutlet weak var tfCategories: UITextField!
+    @IBOutlet weak var lbFactsText: UILabel!
+    @IBOutlet weak var lbCategories: UILabel!
     
-    func setup(with facts: FactsData?, index: Int){
+    func setup(with facts: FactsData?, index: Int) {
         
         let result = facts!.result[index]
         
-//        tvFactText.text = result.value
+        lbFactsText.text = result.value
         print(result.value)
         if let category = result.categories.first {
-            tfCategories.text = category
+            
+            lbCategories.text = category!.uppercased()
+            lbCategories.sizeToFit()
+//            heightSize = lbFactsText.frame.height + lbCategories.frame.height
+        } else {
+            
+            lbCategories.text = "UNCATEGORIZED"
+            lbCategories.sizeToFit()
+//            heightSize = lbFactsText.frame.height + lbCategories.frame.height
         }
+        
+//        return heightSize!
+    }
+    
+    func heightSum (factTextHeight: CGFloat, categoriesHeight: CGFloat) -> CGFloat {
+        
+        var heightSum: CGFloat
+        heightSum = lbFactsText.frame.height + lbCategories.frame.height
+        
+        return heightSum
     }
     
     @IBAction func btShare(_ sender: UIButton) {
+        
+//        func copyURL(with facts: FactsData?, index: Int) {
+//
+//            let result = facts!.result[index]
+//            UIPasteboard.general.string = result.url
+//        }
     }
 }
