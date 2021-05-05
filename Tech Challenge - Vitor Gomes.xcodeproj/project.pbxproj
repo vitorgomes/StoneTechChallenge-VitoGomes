@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E78F59E0263091A400068AF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59DF263091A400068AF7 /* MainViewController.swift */; };
 		E78F59E5263091BB00068AF7 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59E4263091BB00068AF7 /* FactViewController.swift */; };
-		E78F59ED2630963600068AF7 /* FactsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59EC2630963600068AF7 /* FactsCollectionViewController.swift */; };
 		E78F59F226309AE800068AF7 /* FactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */; };
 		E78F5A002630B4BF00068AF7 /* FactsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59FF2630B4BF00068AF7 /* FactsData.swift */; };
 		E7DDBEF826377A60009ECB00 /* FactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DDBEF726377A60009ECB00 /* FactsManager.swift */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		E78F59DF263091A400068AF7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E78F59E4263091BB00068AF7 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
-		E78F59EC2630963600068AF7 /* FactsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewController.swift; sourceTree = "<group>"; };
 		E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E78F59FF2630B4BF00068AF7 /* FactsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsData.swift; sourceTree = "<group>"; };
 		E7DDBEF726377A60009ECB00 /* FactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsManager.swift; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			children = (
 				E78F59DF263091A400068AF7 /* MainViewController.swift */,
 				E78F59E4263091BB00068AF7 /* FactViewController.swift */,
-				E78F59EC2630963600068AF7 /* FactsCollectionViewController.swift */,
 				E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */,
 			);
 			path = Controller;
@@ -301,7 +298,6 @@
 				E7DDBEF826377A60009ECB00 /* FactsManager.swift in Sources */,
 				E78F59F226309AE800068AF7 /* FactsCollectionViewCell.swift in Sources */,
 				E78F59E5263091BB00068AF7 /* FactViewController.swift in Sources */,
-				E78F59ED2630963600068AF7 /* FactsCollectionViewController.swift in Sources */,
 				E7F3FA7F262F247600F6E557 /* AppDelegate.swift in Sources */,
 				E7F3FA81262F247600F6E557 /* SceneDelegate.swift in Sources */,
 				E78F59E0263091A400068AF7 /* MainViewController.swift in Sources */,
