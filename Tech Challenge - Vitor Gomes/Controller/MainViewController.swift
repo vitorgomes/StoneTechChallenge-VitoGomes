@@ -42,6 +42,8 @@ class MainViewController: UIViewController {
             
             let vc = segue.destination as! FactViewController
             
+            vc.modalPresentationStyle = .fullScreen
+
             vc.receivedValue = resultValue
             
         }
@@ -102,45 +104,15 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let width = view.frame.size.width
-
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FactsCollectionViewCell", for: indexPath)
-//
-//        let height = cell.contentView.systemLayoutSizeFitting(cvFacts.contentSize)
+        var targetSize = UIView.layoutFittingCompressedSize
+        targetSize.width = collectionView.frame.width - 40
         
-//        var targetSize = UIView.layoutFittingCompressedSize
-//        targetSize.width = collectionView.frame.width
+        let result = facts?.result[indexPath.row]
         
-//        let result = facts?.result[indexPath.row]
-//        let factsValue = result!.value
+        let cell = cvFacts.dequeueReusableCell(withReuseIdentifier: "FactsCollectionViewCell", for: indexPath) as! FactsCollectionViewCell
+        cell.setup(with: facts, index: indexPath.row)
         
-//        let cell = FactsCollectionViewCell.SizingCell
-//        cell.setup(with: facts, index: indexPath.row)
-//
-//        return cell.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
-
-        
-//        cell.contentView.layoutIfNeeded()
-//        let height = cell.contentView.systemLayoutSizeFitting(cvFacts.contentSize)
-
-//        let height = cell.contentView.layoutIfNeeded()
-//        return CGSize(width: 380, height: 200)
-//        return CGSize(width: view.bounds, height: cvFacts.frame.height)
-
-//        let fact = self.cvFacts.dataSource?.collectionView(<#T##collectionView: UICollectionView##UICollectionView#>, cellForItemAt: <#T##IndexPath#>)
-
-//        return CGSize(width: width - 40, height: cvFacts.frame.height) // height esta errado
-//        return CGSize(width: width - 40, height: view.frame.size.height / 5)
-        
-        
-        /* Width is working perfectly but problem in on Height.
-         I spent days searching for ways to adapt here to my reality searching on famous developers sites, asking on StackOverFlow, CocoaHeads Slack, Reddit, Youtube,
-         Apple documentation but i was not able to find a solution to adapt here, or at least, understand the suggestion of people.
-         If you look above this method sizeForItemAt these are the only "crap" comments i will left to show things i tried. Note that, suggestions that i used too work with
-         these comments are deleted now (those from other files that in teory would work with that commented ways).
-         So i decided to left a static value 200 and keep searching for a solution.
-         */
-        return CGSize(width: width - 40, height: 200)
+        return cell.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
     }
 }
 
