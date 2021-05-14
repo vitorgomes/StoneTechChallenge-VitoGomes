@@ -9,10 +9,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var facts: FactsData?
-    var factsManager = FactsManager()
+    var facts: FactsData? // Store all the facts based on the struct created on FactsData
+    var factsManager = FactsManager() // Instance of FactsManager to work on this controller
     var numberOfCV = 0
-    var resultValue: String = ""
 
     @IBOutlet weak var cvFacts: UICollectionView!
     @IBOutlet weak var sbSearchFacts: UISearchBar!
@@ -35,7 +34,7 @@ class MainViewController: UIViewController {
         sbSearchFacts.isHidden = !sbSearchFacts.isHidden
     }
     
-    // Transferring the fact text to the next screen. It is working but delayed, still need to fix it.
+    // Transferring the fact text to the next screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "segueMainToFact" {
@@ -43,8 +42,13 @@ class MainViewController: UIViewController {
             let vc = segue.destination as! FactViewController
             
             vc.modalPresentationStyle = .fullScreen
+            
+            // Getting the index of the sellected item to collect the data for next screen
+            let indexPath = cvFacts.indexPathsForSelectedItems?.first
+            let factResult = facts!.result[indexPath!.row]
 
-            vc.receivedValue = resultValue
+            vc.receivedValue = factResult.value
+            vc.receivedURL = factResult.url
             
         }
     }
@@ -61,6 +65,7 @@ extension MainViewController: UISearchBarDelegate {
         
         if let realFact = sbSearchFacts.text {
             
+            // Returning the facts from JSON via closure, declared on FactsManager
             factsManager.factsRequest(realFact) { (facts) in
                 
                 self.facts = facts
@@ -93,6 +98,9 @@ extension MainViewController: UICollectionViewDataSource {
         let cell = cvFacts.dequeueReusableCell(withReuseIdentifier: "FactsCollectionViewCell", for: indexPath) as! FactsCollectionViewCell
     
         cell.setup(with: facts, index: indexPath.row)
+        // Setting the cell to use FactsCollectionViewCellDelegate protocol created on FactsCollectionViewCell
+        cell.delegate = self
+        cell.sharedURL = (facts?.result[indexPath.row].url)!
 
         return cell
     }
@@ -107,8 +115,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         var targetSize = UIView.layoutFittingCompressedSize
         targetSize.width = collectionView.frame.width - 40
         
-        let result = facts?.result[indexPath.row]
-        
         let cell = cvFacts.dequeueReusableCell(withReuseIdentifier: "FactsCollectionViewCell", for: indexPath) as! FactsCollectionViewCell
         cell.setup(with: facts, index: indexPath.row)
         
@@ -120,10 +126,24 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let index = indexPath.row
-        let result = facts?.result[index]
-        resultValue = result!.value
     }
 }
 
+// Extension to make share button inside FactsCollectionViewCell works (via delegate)
+extension MainViewController: FactsCollectionViewCellDelegate {
+    
+    func btShare(with url: String) {
+        
+        /* Pasting the URL to the clipboard.
+         If you want to test:
+         1) Please click on the back button "<",
+         2) then click on search icon like you would search for a new word,
+         3) then click on the search bar,
+         4) wait until the "paste" or "colar" ballon appears, then click on it.
+         
+         You will see the URL on the search bar. In a production app you could go back where you wanna paste the text and do the same thing :) */
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = url
+        print(url)
+    }
+}
