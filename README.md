@@ -1,4 +1,4 @@
-# StoneTechChallenge-VitoGomes  
+# StoneTechChallenge-VitorGomes  
 Desafio da empresa Stone para a vaga de dev iOS com o prazo de 15 dias para ser completo.  
   
 Resultado: Depois de 20 dias tentando e perdendo muito tempo tentando calcular de forma dinâmica a altura das células, não consegui completar o desafio a tempo :(, mas foi extremamente gratificamente trabalhar nele e gostei muito do desafio.  
