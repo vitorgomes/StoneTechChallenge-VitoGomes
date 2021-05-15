@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75CD381264F315800CD5EBA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CD380264F315800CD5EBA /* PaddingLabel.swift */; };
 		E78F59E0263091A400068AF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59DF263091A400068AF7 /* MainViewController.swift */; };
 		E78F59E5263091BB00068AF7 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59E4263091BB00068AF7 /* FactViewController.swift */; };
 		E78F59F226309AE800068AF7 /* FactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E75CD380264F315800CD5EBA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		E78F59DF263091A400068AF7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E78F59E4263091BB00068AF7 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
 		E78F59F126309AE800068AF7 /* FactsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				E7F3FA84262F247600F6E557 /* Main.storyboard */,
+				E75CD380264F315800CD5EBA /* PaddingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				E7DDBEF826377A60009ECB00 /* FactsManager.swift in Sources */,
 				E78F59F226309AE800068AF7 /* FactsCollectionViewCell.swift in Sources */,
 				E78F59E5263091BB00068AF7 /* FactViewController.swift in Sources */,
+				E75CD381264F315800CD5EBA /* PaddingLabel.swift in Sources */,
 				E7F3FA7F262F247600F6E557 /* AppDelegate.swift in Sources */,
 				E7F3FA81262F247600F6E557 /* SceneDelegate.swift in Sources */,
 				E78F59E0263091A400068AF7 /* MainViewController.swift in Sources */,
